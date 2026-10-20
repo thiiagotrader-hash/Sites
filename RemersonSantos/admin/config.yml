@@ -4,58 +4,54 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
+
 media_folder: "RemersonSantos/images/uploads"
 public_folder: "/RemersonSantos/images/uploads"
-publish_mode: editorial_workflow
+# SIMPLE = publica direto, sem rascunho - atualiza site na hora!
+publish_mode: simple
 display_url: "https://remerson.netlify.app"
+
 collections:
-  - name: "settings"
-    label: "🎨 EDITAR SITE - Textos, Imagens e Cores"
+  - name: "site"
+    label: "🎨 EDITAR SITE TODO"
     files:
-      - label: "Site Completo - Edição Total"
-        name: "general"
-        file: "RemersonSantos/content/settings/general.json"
+      - label: "Textos e Informações"
+        name: "settings"
+        file: "RemersonSantos/content/settings/site.json"
         fields:
-          - {label: "Título do Site", name: "site_title", widget: "string"}
-          - {label: "Título Principal (Hero)", name: "hero_title", widget: "string", hint: "Texto grande da capa"}
-          - {label: "Subtítulo", name: "hero_subtitle", widget: "text"}
-          - {label: "Sobre - Título", name: "about_title", widget: "string"}
-          - {label: "Sobre - Texto", name: "about_text", widget: "markdown"}
-          - {label: "WhatsApp", name: "whatsapp", widget: "string", hint: "Só números: 5511999999999"}
-          - {label: "Instagram", name: "instagram", widget: "string"}
-          - label: "🎨 CORES DO SITE"
+          - {label: "Título Principal (Hero) - Quando a mente está...", name: "hero_title", widget: "string", default: "Quando a mente está sobrecarregada, até as coisas simples ficam pesadas."}
+          - {label: "Subtítulo / Apresentação", name: "hero_subtitle", widget: "text", default: "Eu sou Rêmerson Santos, psicólogo em Santos"}
+          - {label: "Sobre Mim - Título", name: "about_title", widget: "string", default: "Sobre mim"}
+          - {label: "Sobre Mim - Texto", name: "about_text", widget: "markdown"}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "5513999999999"}
+          - {label: "Instagram", name: "instagram", widget: "string", default: "@remersonsantos"}
+          - label: "Cores do Site"
             name: "colors"
             widget: "object"
             fields:
-              - {label: "Cor Principal (botões, links)", name: "primary_color", widget: "color", default: "#2563eb", allowInput: true}
-              - {label: "Cor Secundária", name: "secondary_color", widget: "color", default: "#f59e0b", allowInput: true}
-          - label: "🖼️ IMAGENS - Clique para trocar"
+              - {label: "Cor Principal", name: "primary", widget: "color", default: "#7A8F7A", allowInput: true}
+              - {label: "Cor de Fundo", name: "background", widget: "color", default: "#F9F7F3", allowInput: true}
+          - label: "Imagens Principais"
             name: "images"
             widget: "object"
             fields:
-              - {label: "Logo do Site", name: "logo", widget: "image", required: false, hint: "Envie nova logo"}
-              - {label: "Imagem Principal (Hero)", name: "hero_image", widget: "image", required: false}
-              - {label: "Foto Sobre Mim", name: "about_image", widget: "image", required: false}
-              - {label: "Imagem de Fundo", name: "background_image", widget: "image", required: false}
+              - {label: "Foto Topo (logo-header) - pequena circular", name: "logo_header", widget: "image", required: false, hint: "Troca foto pequena do topo esquerdo"}
+              - {label: "Foto Hero (foto-hero) - grande lado direito", name: "foto_hero", widget: "image", required: false, hint: "Troca foto grande da direita"}
+              - {label: "Logo Footer", name: "logo_footer", widget: "image", required: false}
+              - {label: "Foto Palestra 1", name: "palestra1", widget: "image", required: false}
+              - {label: "Foto Palestra 2", name: "palestra2", widget: "image", required: false}
+              - {label: "Foto Palestra 3", name: "palestra3", widget: "image", required: false}
+              - {label: "Foto Grupo", name: "grupo", widget: "image", required: false}
+              - {label: "Foto Local", name: "local", widget: "image", required: false}
+  
   - name: "blog"
     label: "📝 Blog"
     folder: "RemersonSantos/content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Resumo", name: "summary", widget: "text", required: false}
-      - {label: "Data", name: "date", widget: "datetime"}
-      - {label: "Imagem de Capa", name: "thumbnail", widget: "image", required: false}
-      - {label: "Conteúdo", name: "body", widget: "markdown"}
-  - name: "services"
-    label: "💼 Serviços"
-    folder: "RemersonSantos/content/services"
-    create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Nome do Serviço", name: "title", widget: "string"}
-      - {label: "Ícone", name: "icon", widget: "string", default: "🧠"}
-      - {label: "Descrição", name: "description", widget: "text"}
-      - {label: "Imagem", name: "image", widget: "image", required: false}
-      - {label: "Cor do Card", name: "color", widget: "color", required: false, allowInput: true}
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Resumo", name: "summary", widget: "text"}
+      - {label: "Categoria", name: "category", widget: "select", options: ["Saúde Mental", "Ansiedade", "Setembro Amarelo", "Autocuidado"]}
+      - {label: "Imagem", name: "thumbnail", widget: "image", required: false}
+      - {label: "Conteúdo", name: "body", widget: "markdown"}
