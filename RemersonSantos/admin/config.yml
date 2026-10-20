@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: thiiagotrader-hash/Sites
+  branch: main
+  # IMPORTANTE: Usa autenticação do Netlify, não precisa de callback próprio
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "RemersonSantos/images/uploads"
+public_folder: "/RemersonSantos/images/uploads"
+publish_mode: editorial_workflow
+display_url: "https://remerson.netlify.app"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "RemersonSantos/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Resumo", name: "summary", widget: "text", required: false}
+      - {label: "Data", name: "date", widget: "datetime"}
+      - {label: "Imagem", name: "thumbnail", widget: "image", required: false}
+      - {label: "Conteúdo", name: "body", widget: "markdown"}
