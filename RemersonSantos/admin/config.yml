@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: thiiagotrader-hash/Sites
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+media_folder: "RemersonSantos/images/uploads"
+public_folder: "/RemersonSantos/images/uploads"
+publish_mode: editorial_workflow
+display_url: "https://remerson.netlify.app"
+collections:
+  - name: "settings"
+    label: "🎨 EDITAR SITE - Textos, Imagens e Cores"
+    files:
+      - label: "Site Completo - Edição Total"
+        name: "general"
+        file: "RemersonSantos/content/settings/general.json"
+        fields:
+          - {label: "Título do Site", name: "site_title", widget: "string"}
+          - {label: "Título Principal (Hero)", name: "hero_title", widget: "string", hint: "Texto grande da capa"}
+          - {label: "Subtítulo", name: "hero_subtitle", widget: "text"}
+          - {label: "Sobre - Título", name: "about_title", widget: "string"}
+          - {label: "Sobre - Texto", name: "about_text", widget: "markdown"}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string", hint: "Só números: 5511999999999"}
+          - {label: "Instagram", name: "instagram", widget: "string"}
+          - label: "🎨 CORES DO SITE"
+            name: "colors"
+            widget: "object"
+            fields:
+              - {label: "Cor Principal (botões, links)", name: "primary_color", widget: "color", default: "#2563eb", allowInput: true}
+              - {label: "Cor Secundária", name: "secondary_color", widget: "color", default: "#f59e0b", allowInput: true}
+          - label: "🖼️ IMAGENS - Clique para trocar"
+            name: "images"
+            widget: "object"
+            fields:
+              - {label: "Logo do Site", name: "logo", widget: "image", required: false, hint: "Envie nova logo"}
+              - {label: "Imagem Principal (Hero)", name: "hero_image", widget: "image", required: false}
+              - {label: "Foto Sobre Mim", name: "about_image", widget: "image", required: false}
+              - {label: "Imagem de Fundo", name: "background_image", widget: "image", required: false}
+  - name: "blog"
+    label: "📝 Blog"
+    folder: "RemersonSantos/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Resumo", name: "summary", widget: "text", required: false}
+      - {label: "Data", name: "date", widget: "datetime"}
+      - {label: "Imagem de Capa", name: "thumbnail", widget: "image", required: false}
+      - {label: "Conteúdo", name: "body", widget: "markdown"}
+  - name: "services"
+    label: "💼 Serviços"
+    folder: "RemersonSantos/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nome do Serviço", name: "title", widget: "string"}
+      - {label: "Ícone", name: "icon", widget: "string", default: "🧠"}
+      - {label: "Descrição", name: "description", widget: "text"}
+      - {label: "Imagem", name: "image", widget: "image", required: false}
+      - {label: "Cor do Card", name: "color", widget: "color", required: false, allowInput: true}
