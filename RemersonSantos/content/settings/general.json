@@ -1,19 +1,19 @@
 {
   "site_title": "Rêmerson Santos - Psicólogo",
-  "hero_title": "Cuidar da mente é um ato de coragem",
-  "hero_subtitle": "Psicólogo clínico",
   "about_title": "Sobre mim",
-  "about_text": "Sou psicólogo clínico...",
-  "whatsapp": "5511999999999",
-  "instagram": "@remersonsantos",
   "colors": {
     "primary_color": "#2563eb",
     "secondary_color": "#f59e0b"
   },
+  "whatsapp": "5513991916131",
+  "instagram": "@remersonsantos",
+  "hero_title": "Cuidar da mente é um ato de coragem",
   "images": {
-    "logo": "",
-    "hero_image": "",
+    "logo": "/RemersonSantos/images/uploads/whatsapp-image-2026-10-05-at-12.49.42.jpeg",
+    "hero_image": "/RemersonSantos/images/uploads/0002.jpeg",
     "about_image": "",
     "background_image": ""
-  }
+  },
+  "hero_subtitle": "Psicólogo clínico",
+  "about_text": "Sou psicólogo clínico..."
 }
