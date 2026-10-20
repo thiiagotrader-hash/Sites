@@ -4,46 +4,26 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
-
 media_folder: "RemersonSantos/images/uploads"
 public_folder: "/RemersonSantos/images/uploads"
-# SIMPLE = publica direto, sem rascunho - atualiza site na hora!
 publish_mode: simple
 display_url: "https://remerson.netlify.app"
-
 collections:
   - name: "site"
-    label: "🎨 EDITAR SITE TODO"
+    label: "🎨 Editar Site"
     files:
-      - label: "Textos e Informações"
+      - label: "Textos e Cores"
         name: "settings"
         file: "RemersonSantos/content/settings/site.json"
         fields:
-          - {label: "Título Principal (Hero) - Quando a mente está...", name: "hero_title", widget: "string", default: "Quando a mente está sobrecarregada, até as coisas simples ficam pesadas."}
-          - {label: "Subtítulo / Apresentação", name: "hero_subtitle", widget: "text", default: "Eu sou Rêmerson Santos, psicólogo em Santos"}
-          - {label: "Sobre Mim - Título", name: "about_title", widget: "string", default: "Sobre mim"}
-          - {label: "Sobre Mim - Texto", name: "about_text", widget: "markdown"}
-          - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "5513999999999"}
-          - {label: "Instagram", name: "instagram", widget: "string", default: "@remersonsantos"}
-          - label: "Cores do Site"
-            name: "colors"
-            widget: "object"
-            fields:
-              - {label: "Cor Principal", name: "primary", widget: "color", default: "#7A8F7A", allowInput: true}
-              - {label: "Cor de Fundo", name: "background", widget: "color", default: "#F9F7F3", allowInput: true}
-          - label: "Imagens Principais"
+          - {label: "WhatsApp (com DDD)", name: "whatsapp", widget: "string", default: "5513997777213"}
+          - {label: "Cor Principal", name: "primary", widget: "color", default: "#7A8F7A", allowInput: true}
+          - label: "Imagens"
             name: "images"
             widget: "object"
             fields:
-              - {label: "Foto Topo (logo-header) - pequena circular", name: "logo_header", widget: "image", required: false, hint: "Troca foto pequena do topo esquerdo"}
-              - {label: "Foto Hero (foto-hero) - grande lado direito", name: "foto_hero", widget: "image", required: false, hint: "Troca foto grande da direita"}
-              - {label: "Logo Footer", name: "logo_footer", widget: "image", required: false}
-              - {label: "Foto Palestra 1", name: "palestra1", widget: "image", required: false}
-              - {label: "Foto Palestra 2", name: "palestra2", widget: "image", required: false}
-              - {label: "Foto Palestra 3", name: "palestra3", widget: "image", required: false}
-              - {label: "Foto Grupo", name: "grupo", widget: "image", required: false}
-              - {label: "Foto Local", name: "local", widget: "image", required: false}
-  
+              - {label: "Foto Topo", name: "logo_header", widget: "image", required: false}
+              - {label: "Foto Hero Grande", name: "foto_hero", widget: "image", required: false}
   - name: "blog"
     label: "📝 Blog"
     folder: "RemersonSantos/content/blog"
@@ -51,7 +31,4 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Título", name: "title", widget: "string"}
-      - {label: "Resumo", name: "summary", widget: "text"}
-      - {label: "Categoria", name: "category", widget: "select", options: ["Saúde Mental", "Ansiedade", "Setembro Amarelo", "Autocuidado"]}
-      - {label: "Imagem", name: "thumbnail", widget: "image", required: false}
       - {label: "Conteúdo", name: "body", widget: "markdown"}
