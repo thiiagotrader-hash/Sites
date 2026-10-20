@@ -5,8 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Remerson Santos</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    /* Esconde botão GitHub para evitar 404 OAuth - vamos usar só email */
+    [class*="GitHub"], button[class*="github"] { display: none !important; }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.registerPreviewStyle("/RemersonSantos/admin/admin.css");
+    window.addEventListener('load', function() {
+      var style = document.createElement('style');
+      style.innerHTML = `
+        [class*="StyledLogo"] img, img[alt="Decap CMS"] { display: none !important; }
+        .nc-appHeader::before { content: "Rêmerson Santos"; font-size: 22px; font-weight: bold; color: #2a9d8f; margin-right: 20px; display: inline-block; }
+        .trocar-imagem-btn, #trocarImagensBtn, .edit-mode-toggle { display: none !important; }
+        /* Esconde botão GitHub no login do Decap */
+        button:has(svg[class*="github"]), button[class*="GitHub"] { display: none !important; }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
 </body>
 </html>

@@ -2,9 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-# Como o site está dentro de RemersonSantos/, ajustamos os caminhos
+logo_url: "/RemersonSantos/images/logo-remerson.png"
+
 media_folder: "RemersonSantos/images/uploads"
 public_folder: "/RemersonSantos/images/uploads"
+
+display_url: "https://remerson.netlify.app"
 
 collections:
   - name: "blog"
