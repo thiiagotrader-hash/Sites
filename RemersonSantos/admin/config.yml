@@ -10,22 +10,15 @@ publish_mode: simple
 display_url: "https://remerson.netlify.app"
 collections:
   - name: "site"
-    label: "🎨 Editar Site"
+    label: "Editar Site"
     files:
-      - label: "Textos e Cores"
+      - label: "Config"
         name: "settings"
         file: "RemersonSantos/content/settings/site.json"
         fields:
-          - {label: "WhatsApp (com DDD)", name: "whatsapp", widget: "string", default: "5513997777213"}
-          - {label: "Cor Principal", name: "primary", widget: "color", default: "#7A8F7A", allowInput: true}
-          - label: "Imagens"
-            name: "images"
-            widget: "object"
-            fields:
-              - {label: "Foto Topo", name: "logo_header", widget: "image", required: false}
-              - {label: "Foto Hero Grande", name: "foto_hero", widget: "image", required: false}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "5513997777213"}
   - name: "blog"
-    label: "📝 Blog"
+    label: "Blog"
     folder: "RemersonSantos/content/blog"
     create: true
     slug: "{{slug}}"
